@@ -1,0 +1,27 @@
+package org.effectivejava.examples.chapter05.item28;
+
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * Private helper method for wildcard capture - Pages 139-140
+ *
+ * @since 2016. 6. 26.
+ * @author Digitanomad
+ */
+public class Swap {
+	public static void swap(List<?> list, int i, int j) {
+		swapHelper(list, i, j);
+	}
+	
+	// Private helper method for wildcard capture
+	private static <E> void swapHelper(List<E> list, int i, int j) {
+		list.set(i, list.set(j, list.get(i)));
+	}
+	
+	public static void main(String[] args) {
+		List<String> argList = Arrays.asList(new String[]{"a", "b"});
+		swap(argList, 0, argList.size() - 1);
+		System.out.println(argList);
+	}
+}
