@@ -1,4 +1,4 @@
-package org.effectivejava.examples.chapter10;
+package org.effectivejava.examples.chapter10.item72;
 
 /**
  * Awful CountDownLatch implementation - busy-waits incessantly!
